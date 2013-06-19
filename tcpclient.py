@@ -19,7 +19,6 @@ finally:
     sock.close()
  
 print("Sent: {}".format(data))
-InputType = data[0]
 
 #InputSplit = data.strip().split(':')
 InputSplit = re.split('[\s\:]', data)

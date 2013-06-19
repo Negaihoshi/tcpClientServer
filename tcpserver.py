@@ -3,12 +3,11 @@ import re
  
 class MyTCPHandler(socketserver.BaseRequestHandler):
     """
-    The RequestHandler class for our server.
-     
-    It is instantiated once per connection to the server, and must
-    override the handle() method to implement communication to the
-    client.
-    """
+The RequestHandler class for our server.
+It is instantiated once per connection to the server, and must
+override the handle() method to implement communication to the
+client.
+"""
      
     def handle(self):
         # self.request is the TCP socket connected to the client
@@ -27,13 +26,17 @@ class MyTCPHandler(socketserver.BaseRequestHandler):
 
         if InputSplit[0] == '1':
             OutputResult = InputFirstNumber + InputSecondNumber
+            Symbol = '+'
         elif InputSplit[0] == '2':
             OutputResult = InputFirstNumber - InputSecondNumber
+            Symbol = '-'
         elif InputSplit[0] == '3':
             OutputResult = InputFirstNumber * InputSecondNumber
+            Symbol = '*'
         elif InputSplit[0] == '4':
             OutputResult = InputFirstNumber / InputSecondNumber
-        print('{} / {} = {}'.format(InputFirstNumber,InputSecondNumber,OutputResult)
+            Symbol = '/'
+        print('{} {} {} = {}'.format(InputFirstNumber,Symbol,InputSecondNumber,OutputResult))
         #self.request.sendall('{} / {} = {}'.format(InputFirstNumber,InputSecondNumber,OutputResult)
         
 if __name__ == "__main__":
