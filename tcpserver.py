@@ -26,14 +26,15 @@ class MyTCPHandler(socketserver.BaseRequestHandler):
         self.request.sendall(self.data.upper())
 
         if InputSplit[0] == '1':
-            print('{} + {} = {}'.format(InputFirstNumber,InputSecondNumber,(InputFirstNumber+InputSecondNumber)))
+            OutputResult = InputFirstNumber + InputSecondNumber
         elif InputSplit[0] == '2':
-            print('{} - {} = {}'.format(InputFirstNumber,InputSecondNumber,(InputFirstNumber-InputSecondNumber)))
+            OutputResult = InputFirstNumber - InputSecondNumber
         elif InputSplit[0] == '3':
-            print('{} * {} = {}'.format(InputFirstNumber,InputSecondNumber,(InputFirstNumber*InputSecondNumber)))
+            OutputResult = InputFirstNumber * InputSecondNumber
         elif InputSplit[0] == '4':
-            print('{} / {} = {}'.format(InputFirstNumber,InputSecondNumber,(InputFirstNumber/InputSecondNumber)))
-
+            OutputResult = InputFirstNumber / InputSecondNumber
+        print('{} / {} = {}'.format(InputFirstNumber,InputSecondNumber,OutputResult)
+        #self.request.sendall('{} / {} = {}'.format(InputFirstNumber,InputSecondNumber,OutputResult)
         
 if __name__ == "__main__":
     HOST, PORT = "localhost", 9999
