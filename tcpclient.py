@@ -21,4 +21,3 @@ finally:
 print("Sent: {}".format(data))
 
 print("Received: {}".format(received))
-#print("InputSplit[0] = " + InputSplit[0] + " InputSplit[1] = " + InputSplit[1] + " InputSplit[2] = " + InputSplit[2])

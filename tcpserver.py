@@ -40,8 +40,6 @@ client.
         print (result)
         self.request.sendall(result.encode())
 
-        #self.request.sendall('{} / {} = {}'.format(InputFirstNumber,InputSecondNumber,OutputResult)
-        
 if __name__ == "__main__":
     HOST, PORT = "localhost", 9999
      
