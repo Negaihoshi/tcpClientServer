@@ -11,7 +11,7 @@ client.
      
     def handle(self):
         # self.request is the TCP socket connected to the client
-        self.data = self.request.recv(1024).strip()
+        self.data = self.request.recv(1024).decode().strip()
         print("{} wrote:".format(self.client_address[0]))
         print(self.data)
 
@@ -22,7 +22,7 @@ client.
         InputFirstNumber = int(InputSplit[1])
         InputSecondNumber = int(InputSplit[2])
         # just send back the same data, but upper-cased
-        self.request.sendall(self.data.upper())
+        #self.request.sendall(self.data.upper())
 
         if InputSplit[0] == '1':
             OutputResult = InputFirstNumber + InputSecondNumber
@@ -36,7 +36,10 @@ client.
         elif InputSplit[0] == '4':
             OutputResult = InputFirstNumber / InputSecondNumber
             Symbol = '/'
-        print('{} {} {} = {}'.format(InputFirstNumber,Symbol,InputSecondNumber,OutputResult))
+        result = ('{} {} {} = {}'.format(InputFirstNumber,Symbol,InputSecondNumber,OutputResult))
+        print (result)
+        self.request.sendall(result.encode())
+
         #self.request.sendall('{} / {} = {}'.format(InputFirstNumber,InputSecondNumber,OutputResult)
         
 if __name__ == "__main__":

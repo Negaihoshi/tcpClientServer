@@ -20,20 +20,5 @@ finally:
  
 print("Sent: {}".format(data))
 
-#InputSplit = data.strip().split(':')
-InputSplit = re.split('[\s\:]', data)
-
-InputFirstNumber = int(InputSplit[1])
-InputSecondNumber = int(InputSplit[2])
-
-if InputSplit[0] == '1':
-	print('{} + {} = {}'.format(InputFirstNumber,InputSecondNumber,(InputFirstNumber+InputSecondNumber)))
-elif InputSplit[0] == '2':
-	print('{} - {} = {}'.format(InputFirstNumber,InputSecondNumber,(InputFirstNumber-InputSecondNumber)))
-elif InputSplit[0] == '3':
-	print('{} * {} = {}'.format(InputFirstNumber,InputSecondNumber,(InputFirstNumber*InputSecondNumber)))
-elif InputSplit[0] == '4':
-	print('{} / {} = {}'.format(InputFirstNumber,InputSecondNumber,(InputFirstNumber/InputSecondNumber)))
-
 print("Received: {}".format(received))
 #print("InputSplit[0] = " + InputSplit[0] + " InputSplit[1] = " + InputSplit[1] + " InputSplit[2] = " + InputSplit[2])
